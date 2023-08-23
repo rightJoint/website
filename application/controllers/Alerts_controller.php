@@ -22,6 +22,8 @@ class Alerts_controller extends Controller
         );
         $data["message"] = $message;
 
+        $this->view->generate('alerts_viewHead.php', 'template_view.php', $data);
+
         if(key_exists($errType, $this->model->respCode)){
             http_response_code($this->model->respCode[$errType]);
         }
