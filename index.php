@@ -13,6 +13,7 @@ function throwErr($errType, $message)
 {
     include "application/models/Alerts_model.php";
     include "application/controllers/Alerts_controller.php";
+    include "application/views/alerts_view.php";
     $controller = new Alerts_controller();
     $controller->generateErr($errType, $message);
     exit;
