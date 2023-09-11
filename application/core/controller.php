@@ -14,5 +14,4 @@ class Controller {
         $this->view->view_data = $this->model->get_data();
         $this->view->generate();
     }
-
 }
