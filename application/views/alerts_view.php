@@ -4,6 +4,7 @@ class Alerts_View extends View
 
     public $logo = "/img/popimg/error.png";
     public $response_code = 200;
+    public $robot_no_index = true;
 
     function __construct($metrik_block = false)
     {

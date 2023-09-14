@@ -19,6 +19,7 @@ class View
     public $metrika = null;
     public $yandex_verification = null;
     public $metrik_block = true;
+    public $robot_no_index = false;
 
     public $lang_map = array(
         "head" => array(
@@ -65,7 +66,7 @@ class View
             ),
             "home_descr" => array(
                 "en" => "Software product by Right Joint",
-                "rus" => "Программы от Right JointЖ ывсывс: ывсывс ывсывсывы ывсывсывсывс ывцсуцс цсцсцс цсцу 232у323в свысывс 2в23вуы сывс ы всвымвымывмвым"
+                "rus" => "Программы от Right Joint"
             )
         ),
         "lang_panel_text" => array(
@@ -110,7 +111,9 @@ class View
         if($this->metrik_block){
             echo $this->yandex_verification;
         }else{
-            echo "<meta name='robots' content='noindex'>";
+            if($this->robot_no_index){
+                echo "<meta name='robots' content='noindex'>";
+            }
         }
         echo "<title>".$this->lang_map["head"]["title"][$_SERVER["lang"]]."</title>".
             "<link rel='SHORTCUT ICON' href='".$this->shortcut_icon."' type='image/png'>";
