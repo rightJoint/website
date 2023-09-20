@@ -18,7 +18,7 @@ class Alerts_controller extends Controller
                 break;
             }
         }
-
+        $this->view->alert_message = $message;
         $this->view->generate();
 
         if($this->view->response_code != 200){
