@@ -1,7 +1,7 @@
 <?php
 class View
 {
-    public $shortcut_icon = "/img/rightjoint-icon.png";
+    public $shortcut_icon = "/img/siteLogo/favicon.png";
     public $logo = "/img/popimg/menu-icon.png";
 
     public $view_data = null; /*set in model get_data*/
