@@ -5,19 +5,20 @@ class Alerts_View extends View
     public $logo = "/img/popimg/error.png";
     public $response_code = 200;
     public $robot_no_index = true;
+    public $alert_message = null;
 
     function __construct($metrik_block = false)
     {
         $this->styles[]="/css/alerts.css";
         $this->lang_map["ew-warning"] = array(
-                "en" => "At this page displaying catched errors. If you are here, something gone wrong.",
-                "rus" => "На этой странице отображаются ошибки, перехваченные приложением. Если вы здесь, значит что-то пошло не так."
-            );
+            "en" => "At this page displaying catched errors. If you are here, something gone wrong.",
+            "rus" => "На этой странице отображаются ошибки, перехваченные приложением. Если вы здесь, значит что-то пошло не так."
+        );
 
         $this->lang_map["ew-txt"] = array(
-                "en" => "Error occurred",
-                "rus" => "ОШИБКА",
-            );
+            "en" => "Error occurred",
+            "rus" => "ОШИБКА",
+        );
         parent::__construct($metrik_block);
     }
 
@@ -31,11 +32,16 @@ class Alerts_View extends View
             "</div>".
             "<span class='ew-txt'>".$this->lang_map["ew-txt"][$_SESSION["lang"]]."</span>".
             "<span class='ew-code'>".$this->response_code."</span>".
-            "<span class='ew-h'>".$this->h1."</span>";
+            "<span class='ew-h'>".$this->h1."</span>".
+            "<div class='ew-detail'>";
         if($this->view_data){
-            echo  "<div class='ew-detail'>".$this->view_data."</div>";
+            echo $this->view_data;
+        }
+        if($this->alert_message){
+            echo "<p>".$this->alert_message."</p>";
         }
         echo "</div>".
+            "</div>".
             "</div>".
             "</div>".
             "</div>";
