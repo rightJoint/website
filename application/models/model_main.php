@@ -3,8 +3,8 @@ class Model_Main extends Model
 {
     public $lang_map = array(
         "main_page_text" => array(
-            "en" => "Thanks for use my software",
-            "rus" => "Спасибо что пользуетесь моими программами"
+            "en" => "Reconstruction, updates come out soon",
+            "rus" => "Реконструкция, обновления скоро выйдут"
         )
     );
 
